@@ -1,0 +1,10 @@
+frontend/node_modules/
+frontend/dist/
+backend/target/
+ml-service/.venv/
+ml-service/artifacts/*.joblib
+ml-service/__pycache__/
+storage/
+.env
+backend/application-local.yml
+backend/.env.local

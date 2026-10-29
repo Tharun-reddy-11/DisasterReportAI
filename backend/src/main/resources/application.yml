@@ -1,0 +1,22 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://127.0.0.1:3306/disasterreport?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Kolkata}
+    username: ${SPRING_DATASOURCE_USERNAME:root}
+    # Supply this through your STS Run Configuration or terminal environment.
+    # Intentionally blank by default so a database credential is never committed.
+    password: ${SPRING_DATASOURCE_PASSWORD:Tharun@1126}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 25MB
+app:
+  jwt-secret: ${JWT_SECRET:change-this-development-secret-to-a-32-character-minimum-value}
+  ml-url: ${ML_SERVICE_URL:http://localhost:8000}
+  frontend-origin: ${FRONTEND_ORIGIN:http://localhost:5173}

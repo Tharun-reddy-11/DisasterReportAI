@@ -1,0 +1,11 @@
+package com.disasterreportai.api;
+import com.disasterreportai.security.TokenService; import com.disasterreportai.user.*; import jakarta.validation.Valid; import jakarta.validation.constraints.*; import org.springframework.http.*; import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder; import org.springframework.web.bind.annotation.*; import java.util.Map;
+
+@RestController @RequestMapping("/api/auth") public class AuthController {
+ private final UserRepository users; private final TokenService tokens; private final BCryptPasswordEncoder encoder=new BCryptPasswordEncoder();
+ AuthController(UserRepository u,TokenService t){users=u;tokens=t;}
+ record Register(@NotBlank String fullName,@Email String email,@Size(min=8) String password,String phone,@NotBlank String role,boolean termsAccepted){} record Login(@Email String email,@NotBlank String password){}
+ @PostMapping("/register") ResponseEntity<?> register(@Valid @RequestBody Register body){if(!body.termsAccepted())return ResponseEntity.badRequest().body(Map.of("message","Accept the terms to register."));String email=body.email().trim().toLowerCase();if(users.findByEmail(email).isPresent())return ResponseEntity.status(409).body(Map.of("message","An account already exists for this email."));Role role;try{role=Role.valueOf(body.role().toUpperCase());}catch(Exception e){return ResponseEntity.badRequest().body(Map.of("message","Choose Citizen or Volunteer."));}if(role==Role.AUTHORITY)return ResponseEntity.status(403).body(Map.of("message","Authority accounts cannot be self-registered."));User user=new User();user.setFullName(body.fullName().trim());user.setEmail(email);user.setPhone(body.phone());user.setRole(role);user.setPasswordHash(encoder.encode(body.password()));users.save(user);return ResponseEntity.status(201).body(session(user));}
+ @PostMapping("/login") ResponseEntity<?> login(@Valid @RequestBody Login body){var user=users.findByEmail(body.email().toLowerCase()).orElse(null);if(user==null||!encoder.matches(body.password(),user.getPasswordHash()))return ResponseEntity.status(401).body(Map.of("message","Invalid email or password."));return ResponseEntity.ok(session(user));}
+ private Map<String,Object> session(User u){return Map.of("token",tokens.issue(u.getId(),u.getRole().name()),"user",Map.of("name",u.getFullName(),"email",u.getEmail(),"role",u.getRole()));}
+}

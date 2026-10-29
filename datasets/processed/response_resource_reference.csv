@@ -1,0 +1,6 @@
+disaster_category,resource,review_note
+flood,rescue boats,Confirm access routes and water depth with an authority.
+fire,fire service and medical support,Do not infer fire spread from text alone.
+earthquake,search and rescue,Confirm structural safety before response.
+cyclone_storm,shelter and evacuation support,Confirm official weather alerts.
+infrastructure_damage,engineering assessment,Confirm site hazards before entry.

@@ -1,0 +1,11 @@
+signal,signal_type,weight,purpose
+trapped,urgency_term,25,Explainable priority scoring
+collapsed,urgency_term,25,Explainable priority scoring
+urgent,urgency_term,25,Explainable priority scoring
+immediately,urgency_term,25,Explainable priority scoring
+rescue,urgency_term,25,Explainable priority scoring
+missing,urgency_term,25,Explainable priority scoring
+drowning,urgency_term,25,Explainable priority scoring
+evacuate,urgency_term,25,Explainable priority scoring
+critical,urgency_term,25,Explainable priority scoring
+reported_affected_people,impact_count,1,Explainable priority scoring

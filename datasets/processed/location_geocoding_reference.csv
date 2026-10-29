@@ -1,0 +1,24 @@
+place_name,state,district,latitude,longitude,hazard_zone,flood_history
+ramakrishnapuram,Tamil Nadu,Chennai,13.0425,80.2285,High Flood Risk,"2015, 2023"
+velachery,Tamil Nadu,Chennai,12.9815,80.218,Severe Inundation,"2015, 2021, 2023"
+tambaram,Tamil Nadu,Chengalpattu,12.9249,80.1,Moderate Inundation,"2021, 2023"
+alappuzha,Kerala,Alappuzha,9.4981,76.3388,Backwater Flood,"2018, 2019, 2024"
+kuttanad,Kerala,Alappuzha,9.45,76.45,Below Sea Level Flood,"2018, 2019, 2021"
+wayanad,Kerala,Wayanad,11.6854,76.132,Flash Flood & Landslide,"2018, 2024"
+cuttack,Odisha,Cuttack,20.4625,85.8828,Mahanadi River Basin,"2020, 2022"
+bhubaneswar,Odisha,Khordha,20.2961,85.8245,Urban Waterlogging,"2019, 2023"
+guwahati,Assam,Kamrup Metro,26.1445,91.7362,Brahmaputra Overflow,"2020, 2022, 2024"
+kaziranga,Assam,Golaghat,26.5775,93.1711,Annual Brahmaputra Inundation,"2021, 2023, 2024"
+patna,Bihar,Patna,25.5941,85.1376,Ganga Basin Inundation,"2019, 2021"
+dharbhanga,Bihar,Darbhanga,26.1542,85.8918,Bagmati Flood Plain,"2020, 2023"
+yamuna flood plains,Delhi,East Delhi,28.628,77.258,Riverbank Breach,2023
+ito delhi,Delhi,Central Delhi,28.63,77.245,Urban Water Overtopping,2023
+mumbai kurla,Maharashtra,Mumbai Suburban,19.0728,72.8826,Mithi River Overflow,"2005, 2019, 2023"
+mumbai hindmata,Maharashtra,Mumbai City,19.014,72.842,Tidal Inundation,"2020, 2021, 2023"
+greenfield town,Telangana,Hyderabad,17.385,78.4867,Urban Nala Overflow,"2020, 2024"
+market road,Telangana,Hyderabad,17.391,78.472,Low-Lying Market Area,"2020, 2022"
+vijayawada,Andhra Pradesh,NTR,16.5062,80.648,Budameru & Krishna Floods,2024
+budameru,Andhra Pradesh,Krishna,16.54,80.62,Stream Breach,2024
+singh nagar,Andhra Pradesh,NTR,16.535,80.635,Severe Residential Inundation,2024
+ahmedabad,Gujarat,Ahmedabad,23.0225,72.5714,Sabarmati Overflow,"2017, 2022"
+vadodara,Gujarat,Vadodara,22.3072,73.1812,Vishwamitri River Overflow,"2019, 2024"
